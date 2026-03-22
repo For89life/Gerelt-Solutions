@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gerelt Solutions</title>
- 
+
+<!-- SEO -->
+<meta name="description" content="График дизайн, вэб сайт, маркетингийн үйлчилгээ">
+<meta name="keywords" content="design, website, marketing mongolia">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -21,7 +26,6 @@ body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
-  overflow-x:hidden;
 }
 
 /* NAV */
@@ -33,298 +37,114 @@ body{
   padding:20px 60px;
   backdrop-filter:blur(12px);
   background:rgba(2,6,23,0.6);
-  border-bottom:1px solid rgba(255,255,255,0.05);
   z-index:1000;
 }
-
-.nav img{width:48px;}
 
 .nav a{
   margin-left:25px;
   text-decoration:none;
   color:#94a3b8;
   position:relative;
-  padding-bottom:5px;
-  transition:0.3s;
 }
 
-/* underline effect */
+/* underline */
 .nav a::after{
   content:'';
   position:absolute;
   left:0;
-  bottom:0;
-  width:0%;
+  bottom:-3px;
+  width:0;
   height:2px;
   background:linear-gradient(90deg,var(--blue),var(--cyan));
-  box-shadow:0 0 8px var(--cyan);
-  transition:0.3s;
+  transition:.3s;
+}
+.nav a:hover::after{width:100%;}
+.nav a:hover{color:white}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-/* hover үед */
-.nav a:hover{
+.hero h1{
+  font-size:70px;
+  font-weight:900;
+}
+
+/* SERVICES */
+.services{
+  padding:100px 40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  border-radius:15px;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  transition:.4s;
+}
+.card:hover img{transform:scale(1.1);}
+
+/* FORM */
+.form-box{
+  max-width:420px;
+  margin:40px auto;
+  padding:25px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+}
+
+.form-box input,
+.form-box textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:8px;
+  border:none;
+  background:rgba(255,255,255,0.08);
   color:white;
 }
 
-.nav a:hover::after{
-  width:100%;
-}
-
-/* HERO SPLIT */
-.hero-split{
-  position:relative;
-  height:100vh;
-  display:grid;
-  grid-template-columns:1fr 1px 1fr;
-  align-items:center;
-  padding:120px 80px 0;
-}
-
-/* LEFT */
-.hero-left h1{
-  font-size:110px;
-  font-weight:900;
-  line-height:1;
-  letter-spacing:-2px;
-}
-
-/* TEXT ANIMATION */
-.hero-text span{
-  display:block;
-  opacity:0;
-  transform:translateY(60px);
-  animation:reveal 0.8s forwards;
-}
-
-.hero-text span:nth-child(1){animation-delay:0.2s;}
-.hero-text span:nth-child(2){animation-delay:0.4s;}
-.hero-text span:nth-child(3){animation-delay:0.6s;}
-
-@keyframes reveal{
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* DIVIDER */
-.divider{
-  width:1px;
-  height:60%;
-  background:linear-gradient(to bottom, transparent, #3b82f6, transparent);
-  animation:lineGlow 2s infinite;
-}
-
-@keyframes lineGlow{
-  0%{opacity:0.3;}
-  50%{opacity:1;}
-  100%{opacity:0.3;}
-}
-
-/* RIGHT */
-.hero-right{
-  padding-left:60px;
-}
-
-.hero-right h2{
-  color:var(--blue);
-  margin-bottom:15px;
-  letter-spacing:2px;
-}
-
-.hero-right p{
-  color:#94a3b8;
-  max-width:400px;
-  line-height:1.6;
-}
-
-/* BUTTON */
 .cta2{
-  margin-top:25px;
-  padding:12px 26px;
+  width:100%;
+  padding:12px;
   border:none;
   border-radius:30px;
   background:linear-gradient(90deg,var(--blue),var(--cyan));
   color:white;
   cursor:pointer;
-  transition:0.3s;
-}
-.cta2:hover{
-  transform:translateX(5px);
 }
 
-/* GLOW BACKGROUND */
-.hero-split::before{
-  content:'';
-  position:absolute;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle,#3b82f6,transparent);
-  filter:blur(120px);
-  opacity:0.25;
-  top:20%;
-  left:20%;
-  animation:moveGlow 10s infinite alternate;
-  z-index:-1;
-}
-
-@keyframes moveGlow{
-  from{transform:translate(0,0);}
-  to{transform:translate(100px,50px);}
-}
-
-/* SERVICES */
-.services{
-  padding:120px 60px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-
-.card{
-  position:relative;
-  border-radius:16px;
-  overflow:hidden;
-  transform:translateY(40px);
-  opacity:0;
-  transition:0.6s;
-}
-
-.card.show{
-  transform:translateY(0);
-  opacity:1;
-}
-
-.card img{
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  transition:0.5s;
-}
-
-.card:hover img{
-  transform:scale(1.1);
-}
-
-.overlay{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  padding:20px;
-  background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);
-}
-
-/* CONTACT */
-.contact{
-  padding:120px 20px;
+/* STATUS */
+.status{
   text-align:center;
-}
-
-iframe{
-  width:100%;
-  max-width:750px;
-  height:600px;
-  border:none;
-  border-radius:14px;
-}
-
-/* FOOTER */
-.footer{
-  padding:40px;
-  text-align:center;
-  color:#64748b;
-}
-
-/* REVEAL */
-.reveal{
-  opacity:0;
-  transform:translateY(60px);
-  transition:0.8s;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-/* FORM BOX */
-.form-box{
-  max-width:420px;
-  margin:40px auto;
-  padding:30px;
-  border-radius:18px;
-  background:rgba(255,255,255,0.03);
-  backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-/* INPUT STYLE */
-.form-box input,
-.form-box textarea{
-  width:100%;
-  padding:14px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.1);
-  background:rgba(255,255,255,0.05);
-  color:white;
-  font-size:14px;
-  outline:none;
-  transition:0.3s;
-}
-
-/* PLACEHOLDER */
-.form-box input::placeholder,
-.form-box textarea::placeholder{
-  color:#94a3b8;
-}
-
-/* FOCUS EFFECT */
-.form-box input:focus,
-.form-box textarea:focus{
-  border-color:var(--cyan);
-  box-shadow:0 0 10px rgba(6,182,212,0.4);
-  background:rgba(255,255,255,0.08);
-}
-
-/* TEXTAREA SIZE */
-.form-box textarea{
-  min-height:120px;
-  resize:none;
-}
-.overlay h3{
-  color: white;
-}
-
-/* BUTTON FULL WIDTH */
-.form-box button{
-  width:100%;
   margin-top:10px;
+  font-size:14px;
 }
-/* MOBILE */
-@media(max-width:900px){
-.hero-split{
-  grid-template-columns:1fr;
-  text-align:center;
-  gap:30px;
-}
-.divider{display:none;}
-.hero-left h1{font-size:60px;}
-.hero-right{padding:0;}
-}
+
 </style>
 </head>
 
 <body>
 
-  
 <!-- NAV -->
 <div class="nav">
-  <div style="display:flex;align-items:center;gap:10px;">
-    <img src="images/logo.png.png">
-    <b>Gerelt Solutions</b>
-  </div>
+  <b>Gerelt Solutions</b>
   <div>
     <a href="#">Нүүр</a>
     <a href="#services">Үйлчилгээ</a>
@@ -333,172 +153,121 @@ iframe{
 </div>
 
 <!-- HERO -->
-<section class="hero-split">
-
-  <div class="hero-left">
-    <h1 class="hero-text">
-      <span>ТАНЫ</span>
-      <span>АМАР</span>
-      <span>ШИЙДЭЛ</span>
-    </h1>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="hero-right">
-    <h2>БҮГДИЙГ БИДЭНД ДААТГА!</h2>
-    <p>
-      Бид таны брэндийн өнгө төрх, маркетинг, веб хөгжүүлэлт болон
-      хэвлэлийн бүх төрлийн үйлчилгээг нэг дор шийдэж өгнө.
-    </p>
-    <button onclick="scrollToContact()" class="cta2">
-      Холбоо барих →
-    </button>
-  </div>
-
+<section class="hero">
+  <h1>ТАНЫ АМАР ШИЙДЭЛ</h1>
 </section>
 
 <!-- SERVICES -->
-<div class="grid">
+<section class="services" id="services">
+  <h2 style="text-align:center;margin-bottom:30px;">Манай үйлчилгээ</h2>
 
-  <!-- ГРАФИК ДИЗАЙН -->
-  <a href="https://your-link1.com" target="_blank" class="card-link">
-    <div class="card">
-      <img src="images/Graphic.jpg">
-      <div class="overlay">
-        <h3>График дизайн</h3>
+  <div class="grid">
+
+    <a href="https://example.com/design" target="_blank">
+      <div class="card">
+        <img src="service1.jpg">
       </div>
-    </div>
-  </a>
+    </a>
 
-  <!-- МЕДИА -->
-  <a href="https://your-link2.com" target="_blank" class="card-link">
-    <div class="card">
-      <img src="images/media.jpg">
-      <div class="overlay">
-        <h3>Медиа контент</h3>
+    <a href="https://example.com/media" target="_blank">
+      <div class="card">
+        <img src="service2.jpg">
       </div>
+    </a>
+
+    <div class="card">
+      <img src="service3.jpg">
     </div>
-  </a>
 
-  <!-- БУСАД -->
-  <div class="card">
-    <img src="images/web.jpg">
-    <div class="overlay"><h3>Вэб сайт</h3></div>
+    <div class="card">
+      <img src="service4.jpg">
+    </div>
+
   </div>
-
-  <div class="card">
-    <img src="images/Printing.png">
-    <div class="overlay"><h3>Хэвлэл</h3></div>
-  </div>
-
-</div>
+</section>
 
 <!-- CONTACT -->
-<section class="contact reveal" id="contact">
-  <h2>Холбоо барих</h2>
+<section id="contact">
+  <h2 style="text-align:center">Холбоо барих</h2>
+
   <form id="contactForm" class="form-box">
+    <input type="text" name="name" placeholder="Нэр" required>
+    <input type="text" name="phone" placeholder="Утас" required>
+    <input type="email" name="email" placeholder="Имэйл">
+    <textarea name="message" placeholder="Мессеж"></textarea>
 
-  <input type="text" name="name" placeholder="Нэр" required>
-  <input type="text" name="phone" placeholder="Утас" required>
-  <input type="email" name="email" placeholder="Имэйл">
-  <textarea name="message" placeholder="Мессеж"></textarea>
- 
-  <button type="submit" class="cta2">Илгээх</button>
+    <button class="cta2">Илгээх</button>
 
-</form>
-  <p style="margin-top:20px;">
-    📞 +976 72100262 | 99410262 <br>
-    📧 Gereltsolutions@gmail.com
-  </p>
+    <div class="status" id="status"></div>
+  </form>
 </section>
- 
-<div class="footer">
-  © 2026 Gerelt Solutions
+
+<!-- FOOTER -->
+<div style="text-align:center;padding:20px;color:#777">
+© 2026 Gerelt Solutions
 </div>
 
 <script>
+
+/* SCROLL */
 function scrollToContact(){
   document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 }
 
-/* reveal animation */
-window.addEventListener('scroll',()=>{
-  document.querySelectorAll('.reveal').forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight - 100){
-      el.classList.add('active');
-    }
-  });
+/* FORM */
+const scriptURL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
 
-  document.querySelectorAll('.card').forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight - 100){
-      el.classList.add('show');
-    }
-  });
-});
-
-/* HERO PARALLAX */
-const hero = document.querySelector('.hero-split');
-
-hero.addEventListener('mousemove', (e)=>{
-  const x = (e.clientX / window.innerWidth - 0.5) * 15;
-  const y = (e.clientY / window.innerHeight - 0.5) * 15;
-  hero.style.transform = `translate(${x}px, ${y}px)`;
-});
-const scriptURL = "https://script.google.com/macros/s/AKfycbz19QVg53PHPhcWPDetfkVlJfOBqqcFlzZVlb1b4WneCZS7UYiHANCfUWEVtIIx59U/exec";
- method: "POST",
-   
-document.getElementById("contactForm").addEventListener("submit", function(e){
+document.getElementById("contactForm").addEventListener("submit", async function(e){
   e.preventDefault();
 
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
+  const status = document.getElementById("status");
+  status.innerText = "Илгээж байна...";
 
-  fetch(scriptURL, {
-    body: JSON.stringify(data)
-  })
-  .then(res => res.json())
-  .then(() => {
-    alert("Амжилттай илгээгдлээ!");
+  const formData = new FormData(this);
+
+  try{
+    await fetch(scriptURL,{
+      method:"POST",
+      body:formData
+    });
+
+    status.innerText = "Амжилттай илгээгдлээ!";
     this.reset();
-  })
-  .catch(err => {
-    alert("Алдаа гарлаа!");
-    console.error(err);
-  });
+  }catch(err){
+    status.innerText = "Алдаа гарлаа!";
+  }
+});
+
+/* FIXED PARALLAX */
+const hero = document.querySelector('.hero');
+
+hero.addEventListener('mousemove',(e)=>{
+  const x=(e.clientX/window.innerWidth-0.5)*10;
+  const y=(e.clientY/window.innerHeight-0.5)*10;
+  hero.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 </script>
-<!-- Messenger Chat Plugin -->
-<div id="fb-root"></div>
 
-<!-- Chat Bubble -->
+<!-- FB CHAT -->
+<div id="fb-root"></div>
 <div id="fb-customer-chat" class="fb-customerchat"></div>
 
 <script>
-  var chatbox = document.getElementById('fb-customer-chat');
+var chatbox = document.getElementById('fb-customer-chat');
+chatbox.setAttribute("page_id", "YOUR_PAGE_ID");
 
-  // 👉 ЭНД PAGE ID-гаа хийнэ
-  chatbox.setAttribute("page_id", "YOUR_PAGE_ID");
+window.fbAsyncInit = function () {
+  FB.init({xfbml:true,version:'v18.0'});
+};
 
-  chatbox.setAttribute("attribution", "biz_inbox");
-</script>
-
-<script>
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: 'v18.0'
-    });
-  };
-
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+(function(d,s,id){
+var js,fjs=d.getElementsByTagName(s)[0];
+if(d.getElementById(id)) return;
+js=d.createElement(s);js.id=id;
+js.src='https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+fjs.parentNode.insertBefore(js,fjs);
+}(document,'script','facebook-jssdk'));
 </script>
 
 </body>
