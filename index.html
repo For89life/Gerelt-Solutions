@@ -362,9 +362,9 @@ iframe{
 <div class="grid">
 
   <!-- ГРАФИК ДИЗАЙН -->
-  <a href="https://1gereltacademy-cpu.github.io/gereltacademy/#registrationForm" target="_blank" class="card-link">
+  <a href="https://1gereltacademy-cpu.github.io/gereltacademy/" target="_blank" class="card-link">
     <div class="card">
-      <img src="images/Graphic.jpg">
+      <img src="images/Graphic.webp" loading="lazy" alt="График дизайн">
       <div class="overlay">
         <h3>График дизайн</h3>
       </div>
@@ -372,9 +372,9 @@ iframe{
   </a>
 
   <!-- МЕДИА -->
-  <a href="https://your-link2.com" target="_blank" class="card-link">
+  <a href="https://1gereltacademy-cpu.github.io/gereltacademy/" target="_blank" class="card-link">
     <div class="card">
-      <img src="images/media.jpg">
+      <img src="images/media.webp" loading="lazy" alt="Медиа контент">
       <div class="overlay">
         <h3>Медиа контент</h3>
       </div>
@@ -383,12 +383,12 @@ iframe{
 
   <!-- БУСАД -->
   <div class="card">
-    <img src="images/web.jpg">
+    <img src="images/web.webp" loading="lazy" alt="Вэб сайт">
     <div class="overlay"><h3>Вэб сайт</h3></div>
   </div>
 
   <div class="card">
-    <img src="images/Printing.png">
+    <img src="images/Printing.webp" loading="lazy" alt="Хэвлэл">
     <div class="overlay"><h3>Хэвлэл</h3></div>
   </div>
 
@@ -468,37 +468,33 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
 
 </script>
 
+
+
 <!-- Messenger Chat Plugin -->
 <div id="fb-root"></div>
 
-<!-- Chat Bubble -->
-<div id="fb-customer-chat" class="fb-customerchat"></div>
+<div id="fb-customer-chat"
+     class="fb-customerchat"
+     attribution="biz_inbox"
+     page_id="841527099054116"
+     theme_color="#3b82f6">
+</div>
 
 <script>
-  var chatbox = document.getElementById('fb-customer-chat');
+window.fbAsyncInit = function () {
+  FB.init({
+    xfbml: true,
+    version: 'v18.0'
+  });
+};
 
-  // 👉 ЭНД PAGE ID-гаа хийнэ
-  chatbox.setAttribute("page_id", "YOUR_PAGE_ID");
-
-  chatbox.setAttribute("attribution", "biz_inbox");
+(function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if(d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>
-
-<script>
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: 'v18.0'
-    });
-  };
-
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
 </body>
 </html>
